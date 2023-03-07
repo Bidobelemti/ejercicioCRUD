@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import modelo.ConsultasPokemon;
 import modelo.Pokemon;
 
 /**
@@ -23,9 +24,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     FileInputStream fis;
     int longitudBytes;
     Pokemon pokemon;
+    ConsultasPokemon conexion;
 
     public FrmPrincipal() {
         initComponents();
+        conexion = new ConsultasPokemon();
     }
 
     /**
@@ -177,6 +180,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pokemon.setId(Integer.parseInt(txtNombre.getText()));
         pokemon.setImagen(fis);
         pokemon.setLongitudImagen(longitudBytes);
+        conexion.insertarPokemon(pokemon);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
