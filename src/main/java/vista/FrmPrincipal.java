@@ -177,7 +177,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         pokemon = new Pokemon();
         pokemon.setNombre(txtNombre.getText());
-        pokemon.setId(Integer.parseInt(txtNombre.getText()));
+        pokemon.setId(Integer.parseInt(txtID.getText()));
         pokemon.setImagen(fis);
         pokemon.setLongitudImagen(longitudBytes);
         if(conexion.insertarPokemon(pokemon)){
