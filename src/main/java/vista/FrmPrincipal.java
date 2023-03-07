@@ -180,7 +180,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pokemon.setId(Integer.parseInt(txtNombre.getText()));
         pokemon.setImagen(fis);
         pokemon.setLongitudImagen(longitudBytes);
-        conexion.insertarPokemon(pokemon);
+        if(conexion.insertarPokemon(pokemon)){
+            JOptionPane.showMessageDialog(rootPane, "Pokemon guardado exitosamente");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "No se pudo guardar el pokemon");
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
